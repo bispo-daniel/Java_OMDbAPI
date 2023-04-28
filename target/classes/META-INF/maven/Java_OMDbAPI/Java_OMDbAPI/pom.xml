@@ -9,6 +9,18 @@
 	    <artifactId>okhttp</artifactId>
 	    <version>4.9.1</version>
 	</dependency>
+	
+	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20230227</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>com.jayway.jsonpath</groupId>
+	    <artifactId>json-path</artifactId>
+	    <version>2.4.0</version>
+	</dependency>
 
   </dependencies>
 

@@ -5,6 +5,12 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import org.json.JSONObject;
+
+import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.spi.json.JsonOrgJsonProvider;
+
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -19,7 +25,23 @@ public class Main {
 		
 		if(res.code() == 200) {
 			String response = res.body().string();
-			System.out.println("getJSON function response: " + response);
+			System.out.println(response);
+			
+			JSONObject json = new JSONObject(response);
+			
+			Configuration config = Configuration.builder().jsonProvider(new JsonOrgJsonProvider()).build();
+			
+			JsonPath movieTitlePath = JsonPath.compile("$.Title");
+			Object movieTitleObj = movieTitlePath.read(json, config);
+			
+			JsonPath movieYearPath = JsonPath.compile("$.Year");
+			Object movieYearObj = movieYearPath.read(json, config);
+			
+			jsonValues.add(movieTitleObj.toString());
+			jsonValues.add(movieYearObj.toString());
+		} else {
+			JOptionPane.showMessageDialog(null, "Something different happened...\nTry again");
+			main(null);
 		}
 		
 		return jsonValues;
