@@ -90,7 +90,7 @@ public class Main {
 		String key = myPrivateKey.KEY;
 		String URL = "http://www.omdbapi.com/?t=%s&apikey=%s";
 	
-		String dialog = "Welcome to the Java Movie App!!\n\nType a movie title\nType 0 to exit";
+		String dialog = "Welcome to the Java Movie App!!\n\nType a Movie Title\nType 0 to exit";
 		String query = JOptionPane.showInputDialog(null, dialog);
 
 		if (query.equals("0")) {
