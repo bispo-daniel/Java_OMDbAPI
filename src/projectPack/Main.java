@@ -104,24 +104,19 @@ public class Main {
 	
 			String movieInfo = "<h3>Released:</h3> %s <br> <h3>Runtime:</h3> %s <br> <h3>Genre:</h3> %s <br> <h3>Plot:</h3> %s <br> <h3>IMDb Rating:</h3> %s <br> <h3>Rotten Tomatoes rating:</h3> %s <br> <h3>Metacritic rating:</h3> %s <br>";
 	
-			try{
-				String movieTitle = jsonValues.get(0);
-				String movieYear = jsonValues.get(1);
-				String movieReleaseDate = jsonValues.get(2);
-				String movieRuntime = jsonValues.get(3);
-				String movieGenre = jsonValues.get(4);
-				String moviePlot = jsonValues.get(5);
-				String IMDbMovieRating = jsonValues.get(6);
-				String rottenTomatoesMovieRating = jsonValues.get(7);
-				String metacriticMovieRating = jsonValues.get(8);
-	
-				String formatedMovieInfo = String.format(movieInfo, movieReleaseDate, movieRuntime, movieGenre, moviePlot, IMDbMovieRating, rottenTomatoesMovieRating, metacriticMovieRating);
-				String formatedHTML = String.format(html, movieTitle, movieYear, formatedMovieInfo);
-				JOptionPane.showMessageDialog(null, formatedHTML, movieTitle, JOptionPane.INFORMATION_MESSAGE, new ImageIcon());
-			
-			} catch (IndexOutOfBoundsException e){
-				e.printStackTrace();
-			}
+			String movieTitle = jsonValues.get(0);
+			String movieYear = jsonValues.get(1);
+			String movieReleaseDate = jsonValues.get(2);
+			String movieRuntime = jsonValues.get(3);
+			String movieGenre = jsonValues.get(4);
+			String moviePlot = jsonValues.get(5);
+			String IMDbMovieRating = jsonValues.get(6);
+			String rottenTomatoesMovieRating = jsonValues.get(7);
+			String metacriticMovieRating = jsonValues.get(8);
+
+			String formatedMovieInfo = String.format(movieInfo, movieReleaseDate, movieRuntime, movieGenre, moviePlot, IMDbMovieRating, rottenTomatoesMovieRating, metacriticMovieRating);
+			String formatedHTML = String.format(html, movieTitle, movieYear, formatedMovieInfo);
+			JOptionPane.showMessageDialog(null, formatedHTML, movieTitle, JOptionPane.INFORMATION_MESSAGE, new ImageIcon());
 			
 			main(null);
 		}
